@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Assignment 4</title>
+  <!--  <link rel="stylesheet" href="A4-components.css" />-->
+    <script type="text/JavaScript" src="A4-components-module.js"></script>
+    <script type="text/JavaScript" src="A4-components-logic.js"></script>
+</head>
+<body>
+<!--create template element-->
+<!-- i tried local css but that css is not work for this template so i use style element as we use in class-->
+<template id="humber_template">    
+    <style>
+
+   #main{            
+            background-color:#00275E;
+            width: 350px;
+            height:200px;
+            position: fixed;
+            right: 20px;
+            top : 20px;           
+            border:10px solid #e5c100;         
+            border-radius: 10px;
+    }   
+     
+    #second{                        
+            background-color:white;           
+    }
+
+    #dueDate{
+            color:black;
+            font-family: Arial;
+            font-size: 22px;
+            text-align: center;
+            text-decoration:bold;
+            font-weight: bold;
+    }
+    #sloganFirst{
+            height:25px;
+            width:85px;
+            background-color:black;
+            margin-top:40px;
+            margin-left:80px;
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            color:#00A2E8;
+           
+    }   
+    #sloganSecond{
+            height:25px;
+            width:125px;
+            background-color:white;
+            margin-top:-45px;
+            margin-left:165px;
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            color:#00A2E8;
+           
+    }
+        
+    </style>
+ <!--===main div for whole template===-->
+    <div id="main">
+ <!--=======image work better in html=====-->
+      <div id="logo"><image src="humber-logo.png" alt="logo" style=width:350px;>
+        <div id="second"> 
+<!-- setting the name of the slot so that we call this in slot in due-date==-->
+        <div><slot id="dueDate" name="dueDate"></slot></div>        
+       </div>
+      </div>
+<!--=== i divide slogan in div because of background color variation====-->
+      <div><p id="sloganFirst">WE ARE</P>  
+      <p id="sloganSecond">FUTURISTIC </p></div>  
+    </div>
+</template>
+<div id="main_para">
+<!-- calling the slot here to show remaining no. of days which is with the name of due-date-->
+<!-- camel case is not working for the name of slot i have to use(-), neither single word work nor camel Case-->
+   <humber-clock id="myNewComponent">
+       <div id="showDate" slot="dueDate">Show Days</div>
+   </humber-clock>
+    
+    <h1>Web Components</h1>
+
+    <h2>Four W3C Standards</h2>
+    <div> 
+        <ol>    
+            <li>The Shadow Dom</li>
+            <li>Templates</li>
+            <li>Custom Elements</li>
+            <li>HTML Imports</li>
+        </ol>        
+    </div>
+
+    <h2>Paragraph 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+
+    <h2>Paragraph 2</h2>
+    <p>Vivamus orci enim, pharetra ac porttitor eget, pretium a tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper arcu id dolor tempus, sit amet rutrum enim euismod. Sed lacinia id purus sed convallis. Nulla euismod massa rutrum rutrum luctus. Etiam sit amet ante diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+
+    </div>
+</body>
+</html>
